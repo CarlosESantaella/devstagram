@@ -1,0 +1,26 @@
+@tailwind base;
+@layer base{
+    .alert{
+        @apply p-2;
+        @apply rounded-lg;
+        @apply mb-6;
+        @apply uppercase;
+        @apply font-bold;
+        @apply text-center;
+    }
+    .alert-green{
+        @apply bg-green-500;
+        @apply text-white;
+    }
+}
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --blue: skyblue;
+}
+
+body{
+    background: #f2f3f4;
+}
