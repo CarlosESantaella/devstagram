@@ -4,21 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class ListarPost extends Component
+class hildegar extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-
-    // public $posts;
-    public function __construct(public $posts)
+    public function __construct()
     {
-        // $this->posts = $posts;
-        $conditional = null;
-        $first = (isset($conditional))? 'existe ' : '';
-        $first = $conditional ?? 'existe';
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class ListarPost extends Component
      */
     public function render()
     {
-        return view('components.listar-post');
+        return view('components.hildegar');
     }
 }

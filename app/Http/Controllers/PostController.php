@@ -13,14 +13,23 @@ class PostController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->except(['show', 'index']);
+        $this->middleware(['auth'])->except(['show', 'index']);
     }
 
     public function index(User  $user)
     {
         // $posts = Post::where('user_id', $user->id)->paginate(5);
         // $posts = Post::where('user_id', $user->id)->get();
+        
         $posts = Post::where('user_id', $user->id)->latest()->paginate(15);
+
+        // $posts = auth()->user()->posts()->where('titulo','like','M%')->get();
+
+        // foreach($posts as $post){
+        //     echo $post->titulo.'<br>';
+        // }
+
+        // die();
         
         // dd($posts);
         // dd($user);
@@ -98,6 +107,7 @@ class PostController extends Controller
             unlink($imagen_path);
             
         }
+        die('hola mundo');
 
         return redirect()->route('posts.index', auth()->user()->username);
 

@@ -15,7 +15,8 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class)->select(['name', 'username', 'password']);
+        // return $this->belongsTo(User::class)->select(['name', 'username', 'password']);
+        return $this->belongsTo(User::class);
     }
 
     public function comentarios()

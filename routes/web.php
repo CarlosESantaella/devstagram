@@ -34,6 +34,8 @@ Route::controller(LoginController::class)->group(function(){
     Route::post('/login', 'store')->name('login');
 });
 
+Route::resource('otraruta', LoginController::class);
+
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
